@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // Tarea para ejecutar el archivo JS activo de forma segura
+            "label": "Ejecutar Archivo JS Activo",
+            "type": "process",
+            // Comando que se ejecuta directamente (el ejecutable)
+            "command": "node",
+            // Argumentos que se pasan al comando
+            "args": [
+                // ${file} es la variable de VS Code que contiene la RUTA COMPLETA del archivo abierto
+                // Usar 'process' con 'args' asegura que toda la ruta, incluidos los espacios, se maneje correctamente.
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [],
+            "detail": "Ejecuta el archivo JavaScript actualmente abierto sin problemas con espacios en la ruta."
+        }
+    ]
+}
